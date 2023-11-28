@@ -1,0 +1,24 @@
+/* https://colorscheme.ru/#0L61Tw0w0w0w0 */
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    list-style-type: none;
+    color: inherit;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(88px + 3rem);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+
+u {
+    text-decoration: underline;
+}

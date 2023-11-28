@@ -1,0 +1,124 @@
+footer {
+    display: grid;
+    grid-area: footer;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    grid-template-rows: 1fr 2rem;
+    grid-template-columns: 3fr 1fr 1fr;
+    grid-template-areas:
+        "about-us quick-links contact-us"
+        "copyright copyright copyright";
+    place-items: stretch;
+    gap: 1rem;
+    margin-top: 3rem;
+    background-color: var(--primary-color-A);
+    color: black;
+}
+
+footer > div {
+    margin: 0.5rem;
+}
+
+footer h3 {
+    position: relative;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+footer h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 3rem;
+    height: 2px;
+    background-color: var(--secondary-color-A);
+    transition: 0.5s ease-in-out;
+}
+
+footer > div:hover h3::after {
+    width: 100%;
+}
+
+footer li {
+    margin-bottom: 0.5rem;
+}
+
+footer li {
+    transition: 0.5s ease-in-out;
+}
+
+footer a {
+    transition: 0.5s ease-in-out;
+}
+
+footer li:hover {
+    transform: translateX(0.5rem);
+}
+
+footer li:hover a {
+    color: var(--secondary-color-B);
+}
+
+footer a:hover {
+    color: var(--secondary-color-B);
+}
+
+.about-us {
+    grid-area: about-us;
+}
+
+.quick-links {
+    grid-area: quick-links;
+}
+
+.contact-us {
+    grid-area: contact-us;
+}
+
+.contact-us span {
+    display: flex;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+.copyright {
+    display: flex;
+    margin: 0;
+    height: 100%;
+    grid-area: copyright;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color-B);
+    color: white;
+    text-align: center;
+}
+
+@media screen and (max-width: 940px) {
+    footer {
+        grid-template-rows: auto 1fr auto;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "about-us about-us"
+            "quick-links contact-us"
+            "copyright copyright";
+    }
+}
+
+@media screen and (max-width: 630px) {
+    footer {
+        grid-template-rows: repeat(4, auto);
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "about-us"
+            "quick-links"
+            "contact-us"
+            "copyright";
+    }
+
+    footer > div:hover h3::after {
+        width: 40%;
+    }
+}
