@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2021c34ae2.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/sign-in-up.css">
+    <link rel="stylesheet" href="../styles/profile.css">
+    <title>Bookshop</title>
+</head>
+<body>
+    <header>
+        <div class="fixed-header">
+            <div class="logo">
+                <img src="../images/logo.png" width="80px" height="80px" alt="logo.png">
+                <h1>BOOK<br>SHOP</h1>
+            </div>
+            <div class="search-bar">
+                <input name="search-bar" type="search" placeholder="Поиск">
+                <button><i class="fa-solid fa-search"></i></button>
+                <button id="toggle-search-bar-btn"><i class="fa-solid fa-search"></i></button>
+            </div>
+            <nav>
+                <button class="burger-btn"><i></i></button>
+                <button class="index-btn"><i class="fa-solid fa-house"></i></button>
+                <button class="catalog-btn"><i class="fa-solid fa-list"></i></button>
+                <button class="articles-btn"><i class="fa-solid fa-newspaper"></i></button>
+                <button class="cart-btn"><i class="fa-solid fa-cart-shopping"></i></button>
+            </nav>
+        </div>
+        <div class="mobile-search-bar">
+            <input name="search-bar" type="search" placeholder="Поиск">
+        </div>
+    </header>
+    <main>
+        <div class="guest-forms authorization">
+            <form name="authorize-form" class="authorize-form" method="get">
+                <h2>Авторизация</h2>
+                <div class="login toggled-email">
+                    <div class="field email">
+                        <label for="authorize-email">Почта</label>
+                        <input name="email" id="authorize-email" type="email" placeholder="example@gmail.com">
+                    </div>
+                    <div class="field tel">
+                        <label for="authorize-tel">Телефон</label>
+                        <input name="tel" id="authorize-tel" type="tel" maxlength="18" placeholder="+1 (234) 567-89-01">
+                    </div>
+                    <button type="button"><i class="fa-solid fa-phone"></i></button>
+                </div>
+                <div class="field password">
+                    <label for="authorize-password">Пароль</label>
+                    <input name="email" id="authorize-password" type="password" minlength="8 "maxlength="24" required>
+                </div>
+                <div class="help">
+                    <a class="forgot-password" href="#"><b>Забыли пароль</b></a>
+                    <a class="registrate" href="#">Еще нет аккаунта?<br><b>Зарегистрироваться</b></a>
+                </div>
+                <button type="submit">Войти</button>
+            </form>
+            <form name="registrate-form" class="registrate-form" method="post">
+                <h2>Регистрация</h2>
+                <div class="field name">
+                    <label for="registrate-name">Имя</label>
+                    <input name="name" id="registrate-name" type="text" required>
+                </div>
+                <div class="field surname">
+                    <label for="registrate-surname">Фамилия</label>
+                    <input name="surname" id="registrate-surname" type="text" required>
+                </div>
+                <div class="field email">
+                    <label for="registrate-email">Почта</label>
+                    <input name="email" id="registrate-email" type="email" placeholder="example@gmail.com" required>
+                </div>
+                <div class="field tel">
+                    <label for="registrate-tel">Телефон</label>
+                    <input name="tel" id="registrate-tel" type="tel" maxlength="18" placeholder="+1 (234) 567-89-01" required>
+                </div>
+                <div class="field password">
+                    <label for="registrate-password">Пароль</label>
+                    <input name="email" id="registrate-password" type="password" minlength="8 "maxlength="24" required><br>
+                    <label for="registrate-repeat-password">Повторно</label>
+                    <input name="repeat-password" id="registrate-repeat-password" type="password" minlength="8 "maxlength="24" required>
+                </div>
+                <div class="help">
+                    <a class="authorize" href="#">Уже есть аккаунт?<br><b>Войти</b></a>
+                    <small>Продолжая, Вы соглашаетесь с нашими <a href="#"><b>условиями пользования</b></a> и <a href="#"><b>политикой конфидециальности</b></a></small>
+                </div>
+                <button type="submit">Зарегистрироваться</button>
+            </form>
+        </div>
+        <div class="profile-management">
+            <div class="tabs toggled-personal">
+                <a href="#" class="switch-tab">Профиль <i class="fa-solid fa-arrow-right"></i></a>
+                <div class="tab personal">
+                    <h2>Личные данные</h2>
+                    <form name="personal-form" class="personal-form" method="post">
+                        <div class="field name">
+                            <label for="name">Имя *</label>
+                            <input name="name" id="name" type="text" required>
+                        </div>
+                        <div class="field surname">
+                            <label for="surname">Фамилия *</label>
+                            <input name="surname" id="surname" type="text" required>
+                        </div>
+                        <div class="field patronymic">
+                            <label for="patronymic">Отчество</label>
+                            <input name="patronymic" id="patronymic" type="text">
+                        </div>
+                        <div class="field birth-date">
+                            <label for="birth-date">Дата рождения</label>
+                            <input name="birth-date" id="birth-date" type="date">
+                        </div>
+                        <div class="field email">
+                            <label for="email">Почта *</label>
+                            <input name="email" id="email" type="email" placeholder="example@gmail.com" required>
+                        </div>
+                        <div class="field tel">
+                            <label for="tel">Телефон *</label>
+                            <input name="tel" id="tel" type="tel" placeholder="+1 (234) 567-89-01" required>
+                        </div>
+                        <button type="submit">Сохранить</button>
+                    </form>
+                </div>
+                <div class="tab orders toggled-active-orders">
+                    <h2>Заказы</h2>
+                    <div class="orders-switcher">
+                        <button class="active-orders-btn">Активные</button>
+                        <button class="complete-orders-btn">Завершенные</button>
+                        <button class="cancelled-orders-btn">Отмененные</button>
+                    </div>
+                    <div class="active-orders">
+                        <div class="order">
+                            <img src="http://placehold.it/113x150" alt="" width="113px" height="150px">
+                            <h4>Название</h4>
+                            <p>Цена <b>999</b></p>
+                            <p>Статус <b>В пути</b></p>
+                            <p>Номер <b>12345678</b></p>
+                            <button>Подробнее</button>
+                        </div>
+                        <div class="order">
+                            <img src="http://placehold.it/113x150" alt="" width="113px" height="150px">
+                            <h4>Название</h4>
+                            <p>Цена <b>999</b></p>
+                            <p>Статус <b>В пути</b></p>
+                            <p>Номер <b>12345678</b></p>
+                            <button>Подробнее</button>
+                        </div>
+                        <div class="order">
+                            <img src="http://placehold.it/113x150" alt="" width="113px" height="150px">
+                            <h4>Название</h4>
+                            <p>Цена <b>999</b></p>
+                            <p>Статус <b>В пути</b></p>
+                            <p>Номер <b>12345678</b></p>
+                            <button>Подробнее</button>
+                        </div>
+                        <div class="order">
+                            <img src="http://placehold.it/113x150" alt="" width="113px" height="150px">
+                            <h4>Название</h4>
+                            <p>Цена <b>999</b></p>
+                            <p>Статус <b>В пути</b></p>
+                            <p>Номер <b>12345678</b></p>
+                            <button>Подробнее</button>
+                        </div>
+                        <div class="order">
+                            <img src="http://placehold.it/113x150" alt="" width="113px" height="150px">
+                            <h4>Название</h4>
+                            <p>Цена <b>999</b></p>
+                            <p>Статус <b>В пути</b></p>
+                            <p>Номер <b>12345678</b></p>
+                            <button>Подробнее</button>
+                        </div>
+                        <div class="order">
+                            <img src="http://placehold.it/113x150" alt="" width="113px" height="150px">
+                            <h4>Название</h4>
+                            <p>Цена <b>999</b></p>
+                            <p>Статус <b>В пути</b></p>
+                            <p>Номер <b>12345678</b></p>
+                            <button>Подробнее</button>
+                        </div>
+                        <div class="no-orders">
+                            <p>Нет активных заказов</p>
+                        </div>
+                    </div>
+                    <div class="complete-orders">
+                        <div class="order">
+                            <img src="http://placehold.it/113x150" alt="" width="113px" height="150px">
+                            <h4>Название</h4>
+                            <p>Цена <b>999</b></p>
+                            <p>Статус <b>Завершен</b></p>
+                            <p>Номер <b>12345678</b></p>
+                            <button>Подробнее</button>
+                        </div>
+                        <div class="order">
+                            <img src="http://placehold.it/113x150" alt="" width="113px" height="150px">
+                            <h4>Название</h4>
+                            <p>Цена <b>999</b></p>
+                            <p>Статус <b>Завершен</b></p>
+                            <p>Номер <b>12345678</b></p>
+                            <button>Подробнее</button>
+                        </div>
+                        <div class="order">
+                            <img src="http://placehold.it/113x150" alt="" width="113px" height="150px">
+                            <h4>Название</h4>
+                            <p>Цена <b>999</b></p>
+                            <p>Статус <b>Завершен</b></p>
+                            <p>Номер <b>12345678</b></p>
+                            <button>Подробнее</button>
+                        </div>
+                        <div class="order">
+                            <img src="http://placehold.it/113x150" alt="" width="113px" height="150px">
+                            <h4>Название</h4>
+                            <p>Цена <b>999</b></p>
+                            <p>Статус <b>Завершен</b></p>
+                            <p>Номер <b>12345678</b></p>
+                            <button>Подробнее</button>
+                        </div>
+                        <div class="order">
+                            <img src="http://placehold.it/113x150" alt="" width="113px" height="150px">
+                            <h4>Название</h4>
+                            <p>Цена <b>999</b></p>
+                            <p>Статус <b>Завершен</b></p>
+                            <p>Номер <b>12345678</b></p>
+                            <button>Подробнее</button>
+                        </div>
+                        <div class="no-orders">
+                            <p>Нет завершенных заказов</p>
+                        </div>
+                    </div>
+                    <div class="cancelled-orders">
+                        <div class="no-orders">
+                            <p>Нет отмененных заказов</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-switcher">
+                <button class="personal-btn"><i class="fa-solid fa-user"></i>Личные данные <b class="fa-solid fa-chevron-right"></b></button>
+                <button class="orders-btn"><i class="fa-solid fa-receipt"></i>Заказы <b class="fa-solid fa-chevron-right"></b></button>
+                <button class="log-out-btn"><i class="fa-solid fa-right-to-bracket"></i>Выйти</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="about-us">
+            <h3>О нас</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus animi quaerat corporis error repellat veritatis culpa optio, assumenda ducimus eveniet, quasi aliquid quo illum sapiente minus magni architecto fuga cumque, labore quam deleniti maxime rem? Facere veniam tenetur inventore.</p>
+        </div>
+        <div class="quick-links">
+            <h3>Ссылки</h3>
+            <ul>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Политика конфидециальности</a></li>
+                <li><a href="#">Помощь</a></li>
+                <li><a href="#">Условия использования</a></li>
+            </ul>
+        </div>
+        <div class="contact-us">
+            <h3>Контакты</h3>
+            <address>
+                <span>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p>14 Тверская<br>
+                    Москва, 117513, Россия</p>
+                </span>
+                <span>
+                    <i class="fa-solid fa-phone"></i>
+                    <p><a href="tel:+79871234567">+1 (234) 567-89-01</a><br>
+                    <a href="tel:+79871234567">+1 (234) 567-89-01</a></p>
+                </span>
+                <span>
+                    <i class="fa-solid fa-envelope"></i>
+                    <p><a href="mailto:example@mail.ru">example@mail.ru</a></p>
+                </span>
+            </address>
+        </div>
+        <div class="copyright">
+            <p>Copyright © 2023 Student MIREA. Все права защищены</p>
+        </div>
+    </footer>
+    <script src="../scripts/global.js"></script>
+    <script src="../scripts/header.js"></script>
+    <script src="../scripts/signInUp.js"></script>
+    <script src="../scripts/profile.js"></script>
+</body>
+</html>

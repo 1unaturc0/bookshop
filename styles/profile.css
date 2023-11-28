@@ -1,0 +1,408 @@
+:root {
+    --primary-color-A: #554DD8;
+    --primary-color-B: #0E0874;
+    --secondary-color-A: #00AB6F;
+    --secondary-color-B: #35D59D;
+}
+
+.profile-management {
+    display: flex;
+    align-items: start;
+    gap: 3rem;
+    margin: 0 3rem;
+}
+
+.tab-switcher {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 160px;
+    padding: 1rem 0.5rem;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+.tab-switcher button {
+    position: relative;
+    width: 100%;
+    height: 2rem;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    text-align: left;
+    background-color: transparent;
+}
+
+.tab-switcher button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+    z-index: -1;
+    filter: opacity(20%);
+}
+
+.tab-switcher button:hover::before {
+    background-color: var(--primary-color-A);
+}
+
+.tab-switcher button i {
+    margin-right: 1rem;
+}
+
+.tab-switcher button b {
+    display: none;
+    position: absolute;
+    right: 1rem;
+    color: var(--secondary-color-A);
+}
+
+.log-out-btn {
+    margin-top: 1rem;
+    color: rgb(239, 41, 41);
+}
+
+.log-out-btn::after {
+    content : '';
+    position: absolute;
+    top: -1rem;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: grey;
+}
+
+.switch-tab {
+    display: none;
+}
+
+.switch-tab i {
+    color: var(--secondary-color-A);
+    transition: margin-left 0.5s ease-out;
+}
+
+.switch-tab:hover i {
+    margin-left: 0.5rem;
+}
+
+.tabs.toggled-personal ~ .tab-switcher .personal-btn::before,
+.tabs.toggled-orders ~ .tab-switcher .orders-btn::before {
+    background-color: var(--primary-color-A);
+}
+
+.tabs {
+    width: 100%;
+    padding: 1rem;
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+}
+
+.tab {
+    display: none; 
+}
+
+.tab h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.tabs.toggled-personal .personal,
+.tabs.toggled-orders .orders {
+    display: block;
+}
+
+.personal-form {
+    display: grid;
+    grid-template: repeat(4, auto) / 1fr 1fr;
+    grid-template-areas:
+        "name surname"
+        "patronymic birth-date"
+        "email tel"
+        ". submit";
+    place-items: center;
+    gap: 2rem 1rem;
+}
+
+.personal-form .field {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.personal-form label {
+    margin-left: 1rem;
+    color: grey;
+}
+
+.personal-form input {
+    width: 100%;
+    height: 3rem;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    border: 1px solid grey;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.personal-form input:focus {
+    filter: brightness(95%);
+}
+
+.name {
+    grid-area: name;
+}
+
+.surname {
+    grid-area: surname;
+}
+
+.patronymic {
+    grid-area: patronymic;
+}
+
+.birth-date {
+    grid-area: birth-date;
+}
+
+.email {
+    grid-area: email;
+}
+
+.tel {
+    grid-area: tel;
+}
+
+.personal button[type="submit"] {
+    grid-area: submit;
+    width: 70%;
+    padding: 1rem 1rem;
+    border-radius: 10px;
+    background-color: var(--primary-color-A);
+    color: white;
+    font-size: 1.2rem;
+    transition: 0.2s ease-in-out;
+}
+
+.tabs {
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+}
+
+.orders-switcher {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    position: relative;
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+.orders-switcher button {
+    position: relative;
+    width: 100%;
+    padding-top: 0.7rem;
+    padding-bottom: 0.2rem;
+    background: transparent;
+    font-size: 1.2rem;
+    text-align: center;
+    transition: color 0.6s ease-in-out;
+}
+
+.orders-switcher button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    border-radius: 3px;
+    z-index: -1;
+    transition: width 0.7s ease-out;
+}
+
+.orders-switcher button:hover {
+    color: white;
+    filter: brightness(100%);
+}
+
+.orders-switcher button:hover::before {
+    width: 100%;
+}
+
+.active-orders-btn::before {
+    background-color: rgb(50, 50, 233);
+}
+
+.complete-orders-btn::before {
+    background-color: rgb(29, 166, 29);
+}
+
+.cancelled-orders-btn::before {
+    background-color: rgb(239, 41, 41);
+}
+
+.orders.toggled-active-orders .active-orders-btn,
+.orders.toggled-complete-orders .complete-orders-btn,
+.orders.toggled-cancelled-orders .cancelled-orders-btn {
+    color: white;
+}
+
+.orders.toggled-active-orders .active-orders-btn::before,
+.orders.toggled-complete-orders .complete-orders-btn::before,
+.orders.toggled-cancelled-orders .cancelled-orders-btn::before {
+    width: 100%;
+}
+
+.active-orders, .complete-orders, .cancelled-orders {
+    display: none;
+}
+
+.orders.toggled-active-orders .active-orders,
+.orders.toggled-complete-orders .complete-orders,
+.orders.toggled-cancelled-orders .cancelled-orders {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.order {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 200px;
+    position: relative;
+    padding: 1rem 1.5rem;
+    box-sizing: border-box;
+    border: 1px solid grey;
+    border-radius: 10px;
+    box-shadow: 0 0 20px grey;
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+}
+
+.order:hover {
+    transform: scale(1.1);
+}
+
+.order::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -150px;
+    width: 100%;
+    height: 400px;
+    margin: 0 auto;
+    border-radius: 70% / 20%;
+    background-color: var(--secondary-color-B);
+    z-index: -1;
+}
+
+.order img {
+    margin: 0 auto;
+    border: 5px solid white;
+    border-radius: 20px;
+    box-shadow: 0 0 5px grey;
+}
+
+.order h4 {
+    align-self: center;
+    position: relative;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.order h4::after {
+    content: '';
+    position: absolute;
+    bottom: -0.2rem;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: white;
+}
+
+.order p {
+    display: flex;
+    justify-content: space-between;
+}
+
+.order button {
+    padding: 0.5rem;
+    box-sizing: border-box;
+    border-radius: 25px;
+    background-color: var(--primary-color-A);
+    color: white;
+}
+
+.active-orders .order::before {
+    background-color:rgb(50, 50, 233);
+}
+
+.complete-orders .order::before {
+    background-color: rgb(29, 166, 29);
+}
+
+.cancelled-orders .order::before {
+    background-color:rgb(239, 41, 41);
+}
+
+.no-orders {
+    display: none;
+    color: grey;
+}
+
+@media screen and (max-width: 770px) {
+    .profile-management.toggled-tab-switcher .tab-switcher {
+        display: flex;
+    }
+
+    .profile-management.toggled-tab-switcher .tabs {
+        display: none;
+    }
+
+    .tab-switcher {
+        display: none;
+        width: 100%;
+    }
+
+    .tab-switcher button b {
+        display: inline-block;
+    }
+
+    .switch-tab {
+        display: block;
+        float: right;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .tabs h2 {
+        font-size: 1.7rem;
+    }
+
+    .personal-form {
+        grid-template: repeat(7, auto) / 1fr;
+        grid-template-areas:
+            "name"
+            "surname"
+            "patronymic"
+            "birth-date"
+            "email"
+            "tel"
+            "submit";
+    }
+}
+
+@media screen and (max-width: 490px) {
+    .orders-switcher {
+        flex-direction: column;
+    }
+}
