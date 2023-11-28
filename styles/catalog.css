@@ -1,0 +1,317 @@
+:root {
+    --primary-color-A: #00AB6F;
+    --primary-color-B: #006F48;
+    --secondary-color-A: #FF9700;
+    --secondary-color-B: #FFB140;
+}
+
+.cart-btn span {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 1rem;
+    height: 1rem;
+    padding: 0.2rem;
+    border-radius: 50%;
+    background-color:rgb(239, 41, 41);
+    color: white;
+    font-size: 1rem;
+}
+
+.catalog {
+    width: 90%;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.catalog h2 {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.catalog h2::after {
+    content: '';
+    position: absolute;
+    bottom: -0.2rem;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-color-B);
+}
+
+.catalog-content {
+    display: flex;
+    align-items: start;
+    gap: 3rem;
+}
+
+.category-switcher {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.5rem;
+    order: -1;
+    min-width: 200px;
+    padding: 1rem 2rem;
+    border: 1px solid grey;
+    border-radius: 10px;
+}
+
+.category-switcher h3 {
+    align-self: center;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.category-switcher button {
+    position: relative;
+    background-color: transparent;
+    font-size: 1.1rem;
+    text-align: left;
+    transition: 0.5s ease-in-out;
+}
+
+.category-switcher button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -0.7rem;
+    width: 4px;
+    height: 100%;
+    background-color: var(--primary-color-B);
+    transition: left 0.5s ease-in-out;
+}
+
+.category-switcher button:hover {
+    transform: translateX(0.7rem);
+    color: var(--secondary-color-A);
+}
+
+.category-switcher button:hover::before {
+    left: -1.4rem;
+}
+
+.switch-category {
+    display: none;
+    margin-left: 3rem;
+}
+
+.switch-category i {
+    color: var(--secondary-color-A);
+    transition: margin-right 0.5s ease-out;
+}
+
+.switch-category:hover i {
+    margin-right: 0.5rem;
+}
+
+.catalog-list {
+    position: relative;
+    width: 100%;
+    padding: 2rem;
+    padding-bottom: 3rem;
+    box-sizing: border-box;
+    border: 7px solid var(--secondary-color-A);
+    border-radius: 25px;
+    box-shadow: 0 5px 20px grey;
+}
+
+.catalog-list::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    z-index: -1;
+    box-shadow: 0 5px 20px grey inset;
+}
+
+.catalog-list.toggled-classical-prose ~ .category-switcher .classical-prose-btn,
+.catalog-list.toggled-fantasy ~ .category-switcher .fantasy-btn,
+.catalog-list.toggled-detective ~ .category-switcher .detective-btn,
+.catalog-list.toggled-publicism ~ .category-switcher .publicism-btn,
+.catalog-list.toggled-lyric ~ .category-switcher .lyric-btn {
+    transform: translateX(0.7rem);
+    color: var(--secondary-color-A);
+}
+
+.catalog-list.toggled-classical-prose ~ .category-switcher .classical-prose-btn::before,
+.catalog-list.toggled-fantasy ~ .category-switcher .fantasy-btn::before,
+.catalog-list.toggled-detective ~ .category-switcher .detective-btn::before,
+.catalog-list.toggled-publicism ~ .category-switcher .publicism-btn::before,
+.catalog-list.toggled-lyric ~ .category-switcher .lyric-btn::before {
+    left: -1.4rem;
+}
+
+.sort-select {
+    float: left;
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 3px;
+    background-color: var(--primary-color-A);
+    color: white;
+    font-size: 1.1rem;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.sort-select:focus {
+    box-shadow: 0 5px 10px -3px rgb(0, 0, 0, .7) inset;
+}
+
+.sort-select option {
+    background-color: var(--primary-color-B);
+}
+
+.category {
+    display: none;
+    padding-top: 0.5rem;
+}
+
+.catalog-list.toggled-classical-prose .classical-prose,
+.catalog-list.toggled-fantasy .fantasy,
+.catalog-list.toggled-detective .detective,
+.catalog-list.toggled-publicism .publicism,
+.catalog-list.toggled-lyric .lyric {
+    display: block;
+}
+
+.category h3 {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    text-align: right;
+    font-size: 1.7rem;
+}
+
+.items {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid grey;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid grey;
+    border-radius: 5px;
+    box-shadow: 0px 7px 5px -5px grey;
+    transition: 0.5s ease-in-out;
+}
+
+.item:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 7px 20px -5px grey;
+}
+
+.item img {
+    border-radius: 3px;
+}
+
+.item h4 {
+    margin-top: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.author {
+    color: grey;
+}
+
+.price {
+    align-self: end;
+    margin: 0.5rem 1.5rem;
+    color: rgb(239, 41, 41);
+    font-size: 1.5rem;
+}
+
+.item span {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.item button {
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+    border-radius: 3px;
+    background-color: var(--primary-color-A);
+    color: white;
+    font-size: 1.1rem;
+    transition: box-shadow 0.5s ease-in-out;
+}
+
+.more-btn {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    padding: 0 !important;
+    background-color: transparent !important;
+    color: var(--secondary-color-B) !important;
+    font-size: 1.7rem !important;
+}
+
+.more-btn::before {
+    content: '';
+    position: absolute;
+    left: -5%;
+    width: 110%;
+    height: 110%;
+    z-index: -2;
+    border-radius: 50%;
+    transition: box-shadow 0.5s ease-in-out;
+}
+
+.item:hover .more-btn::before {
+    box-shadow: 0 5px 10px -3px grey;
+}
+
+.item:hover .buy-btn {
+    box-shadow: 0 5px 10px -3px rgb(0, 0, 0, .7) inset;
+}
+
+@media screen and (max-width: 950px) {
+    .catalog h2 {
+        display: block;
+        width: 9rem;
+        margin: 0 auto;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .catalog-content {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .category-switcher {
+        display: none;
+        width: 70%;
+        align-self: center;
+        box-shadow: 0 0 20px grey;
+    }
+
+    .switch-category {
+        display: block;
+    }
+
+    .catalog-content.toggled-category-switcher .category-switcher {
+        display: flex;
+    }
+
+    .catalog-content.toggled-category-switcher .switch-category,
+    .catalog-content.toggled-category-switcher .catalog-list {
+        display: none;
+    }
+}
