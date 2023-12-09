@@ -278,3 +278,32 @@
         font-size: 1.2rem;
     }
 }
+
+@media screen and (max-height: 800px) {
+    .guest-forms form {
+        padding: 0.5rem;
+    }
+
+    .registrate-form {
+        bottom: 0;
+    }
+
+    .registrate-form label {
+        font-size: 1rem;
+    }
+
+    .registrate-form input {
+        height: 1.2rem;
+    }
+
+    .registrate-form button[type="submit"] {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        height: 3rem;
+    }
+
+    .registrate-form .help {
+        gap: 0.2rem;
+        margin: 0;
+    }
+}
