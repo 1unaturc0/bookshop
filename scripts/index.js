@@ -100,7 +100,6 @@ const createReviewElement = reviewData => {
     }
     description.innerHTML = reviewData.description;
     sender.innerHTML = `От: ${reviewData.sender}`;
-    console.log(reviewData.rating)
     return review;
 };
 

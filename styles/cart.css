@@ -83,7 +83,7 @@
 }
 
 .item:hover {
-    transform: translateX(2rem);
+    transform: translateX(1rem);
 }
 
 .item img {
