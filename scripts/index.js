@@ -9,7 +9,7 @@ const buyBtns = document.querySelectorAll(".buy-btn");
 const reviewsList = document.querySelector(".reviews-list");
 
 function BookData() {
-    this.image = "http://placehold.it/189x250";
+    this.image = "http://place-hold.it/189x250";
     this.author = "Автор";
     this.price = Math.floor(Math.random() * 2000 + 500);
 }

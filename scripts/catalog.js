@@ -26,7 +26,7 @@ const categoriesTitles = [
 ];
 
 function BookData(popularity) {
-    this.image = "http://placehold.it/189x250";
+    this.image = "http://place-hold.it/189x250";
     this.title = "Название";
     this.author = "Автор";
     this.price = Math.floor(Math.random() * 2000 + 500);
