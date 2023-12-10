@@ -14,7 +14,7 @@ function BookData() {
     this.price = Math.floor(Math.random() * 2000 + 500);
 }
 
-function reviewData() {
+function ReviewData() {
     this.rating = Math.floor(Math.random() * 11) / 2;
     this.description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Id similique, quo exercitationem omnis ex sed commodi tenetur non possimus quod illum beatae ipsa culpa perferendis dolore minus molestias esse dolorem.";
     this.sender = "Иван Иванов";
@@ -70,7 +70,7 @@ const createBookElement = bookData => {
 const getReviewsData = qty => {
     const reviewsData = [];
     for (let i = 0; i < qty; i++)
-        reviewsData.push(new reviewData());
+        reviewsData.push(new ReviewData());
     return reviewsData;
 };
 

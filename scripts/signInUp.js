@@ -9,16 +9,6 @@ const authorizeSwitchLoginIcon = document.querySelector(".authorize-form .login 
 const registrate = document.querySelector(".authorize-form .registrate");
 const authorize = document.querySelector(".registrate-form .authorize");
 
-authorizeTelInput.addEventListener("focus", () => {
-    if (!authorizeTelInput.value)
-        authorizeTelInput.value += '+';
-});
-
-authorizeTelInput.addEventListener("blur", () => {
-    if(authorizeTelInput.value == "+")
-        authorizeTelInput.value = "";
-});
-
 authorizeSwitchLoginBtn.addEventListener("click", () => {
     login.classList.toggle("toggled-email");
     login.classList.toggle("toggled-tel");
@@ -42,14 +32,14 @@ authorize.addEventListener("click", () => {
     guestForms.classList.toggle("registration");
 });
 
-document.addEventListener("DOMContentLoaded", () =>
-    [...document.querySelectorAll(".guest-forms input")].forEach(input =>
-        input.value = ""
-    )
-);
-
 [...document.querySelectorAll('.guest-forms form button[type="submit"]')].forEach(btn => 
     btn.addEventListener("click", () => 
         guestForms.style.display = "none"
+    )
+);
+
+document.addEventListener("DOMContentLoaded", () =>
+    [...document.querySelectorAll(".guest-forms input")].forEach(input =>
+        input.value = ""
     )
 );

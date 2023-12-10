@@ -14,11 +14,14 @@ const removeItem = item => {
         noItems.style.display = "block";
 }
 
-clearBtn.addEventListener("click", () => 
+clearBtn.addEventListener("click", () => {
     itemsList.forEach(item =>
         removeItem(item)
-    )
-);
+    );
+    totalPrice.innerHTML = 0;
+    totalDiscount.innerHTML = 0;
+    finalPrice.innerHTML = 0;
+});
 
 itemsList.forEach(item => {
     const minusBtn = item.querySelector(".minus-btn");
